@@ -8,3 +8,7 @@ quarkus.log.file.rotation.max-backup-index=2
 quarkus.log.file.rotation.rotate-on-boot=true
 Emplacement des fichiers Logs : 
 /opt/keycloak/data
+
+logs pattern : 
+--log-console-format="%s%e%n" 
+https://www.keycloak.org/server/logging
