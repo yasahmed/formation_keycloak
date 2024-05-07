@@ -1,0 +1,13 @@
+wget  https://github.com/gessnerfl/fake-smtp-server/releases/download/2.0.0/fake-smtp-server-2.0.0.jar
+java -DServer.port=9090 -jar fake-smtp-server-2.0.0.jar 
+smtp port 8025
+
+test smtp : 
+
+ EHELO toto.com
+  MAIL FROM: admin@toto.com
+  RCPT TO: admin@toto.com
+  DATA
+  My message
+  .
+  QUIT
