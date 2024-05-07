@@ -15,3 +15,5 @@ create database keycloakdb;
 create user keycloakuser with encrypted password 'keycloakpass';
 grant all privileges on database keycloakdb to keycloakuser;
 
+psql postgresql://keycloakuser:keycloakpass@localhost:5432/keycloakdb
+
