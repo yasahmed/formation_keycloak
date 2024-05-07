@@ -1,0 +1,1 @@
+./kc.sh start-dev --log-level="DEBUG,org.hibernate:debug,org.hibernate.hql.internal.ast:info"
