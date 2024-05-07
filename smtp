@@ -4,10 +4,10 @@ smtp port 8025
 
 test smtp : 
 
- EHELO toto.com
-  MAIL FROM: admin@toto.com
-  RCPT TO: admin@toto.com
-  DATA
-  My message
-  .
-  QUIT
+ HELO toto.com
+ MAIL FROM: admin@toto.com
+ RCPT TO: admin@toto.com
+ DATA
+ My message
+ .
+ QUIT
