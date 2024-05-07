@@ -1,1 +1,10 @@
 ./kc.sh start-dev --log-level="DEBUG,org.hibernate:debug,org.hibernate.hql.internal.ast:info" --log="console,file" --log-file=/opt/keycloak/data/logs/keycloak.log
+
+nano /opt/keycloak/conf/quarkus.properties
+
+Configuration Quarkus : 
+quarkus.log.file.rotation.max-file-size=1M
+quarkus.log.file.rotation.max-backup-index=2
+quarkus.log.file.rotation.rotate-on-boot=true
+Emplacement des fichiers Logs : 
+/opt/keycloak/data
