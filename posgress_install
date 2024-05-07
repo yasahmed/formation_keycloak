@@ -8,3 +8,10 @@ host    all             all             0.0.0.0/24               md5
 
 sudo ufw allow 5432/tcp
 sudo systemctl restart postgresql.service
+
+
+sudo -u postgres psql
+create database keycloakdb;
+create user keycloakuser with encrypted password 'keycloakpass';
+grant all privileges on database keycloakdb to keycloakuser;
+
