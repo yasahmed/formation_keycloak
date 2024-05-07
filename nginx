@@ -3,6 +3,8 @@ nano /etc/nginx/sites-enabled/default
 
 /opt/keycloak/bin/kc.sh start  --proxy="edge"  --hostname-strict=false 
 
+docker run -p 8080:8080  -e KEYCLOAK_ADMIN=admin  -e KEYCLOAK_ADMIN_PASSWORD=password  quay.io/keycloak/keycloak:latest  start  --proxy="edge"  --hostname-strict=false
+
 server {
 	listen 80 default_server;
 	server_name _;
