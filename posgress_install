@@ -17,3 +17,5 @@ grant all privileges on database keycloakdb to keycloakuser;
 
 psql postgresql://keycloakuser:keycloakpass@localhost:5432/keycloakdb
 
+
+export KEYCLOAK_ADMIN_PASSWORD=admin && export export KEYCLOAK_ADMIN=admin && kc..
