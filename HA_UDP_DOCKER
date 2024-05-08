@@ -4,8 +4,8 @@ services:
     image: quay.io/keycloak/keycloak:24.0.3
     ports:
       - "8080"
-#    volumes:
-#      - ./jdbc.xml:/opt/keycloak/conf/jdbc.xml
+    volumes:
+      - ./jdbc.xml:/opt/keycloak/conf/jdbc.xml
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
@@ -23,7 +23,7 @@ services:
       - start
       - --hostname-strict=false
       - --proxy=edge
-#      - --cache-config-file=jdbc.xml
+      - --cache-config-file=jdbc.xml
 
 
 
