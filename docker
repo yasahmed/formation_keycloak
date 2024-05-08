@@ -1,0 +1,1 @@
+docker run --name keycloak_server -p 8080:8080  -e KEYCLOAK_ADMIN=admin  -e KEYCLOAK_ADMIN_PASSWORD=password  quay.io/keycloak/keycloak:latest start-dev  --http-port=8080
