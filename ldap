@@ -1,0 +1,58 @@
+apt get upgrade
+apt get update
+apt install slapd ldap-utils
+dpkg-reconfigure slapd
+***
+nano /etc/hosts = set hostname
+***
+nano /etc/ldap/ldap.conf
+
+BASE    dc=server,dc=com
+URI     ldap://ldap.server.com
+
+****
+nano base.ldif 
+
+dn: ou=users,dc=server,dc=com
+objectClass: organizationalUnit
+ou: users
+
+ldapadd -x -D cn=admin,dc=server,dc=com -W -f  base.ldif 
+
+**
+
+nano ahmed.ldif
+
+dn: ou=users,dc=server,dc=com
+objectClass: organizationalUnit
+ou: users
+root@machine-008-vm:/home/azureuser# cat ahmed.ldif 
+dn: uid=ahmed,ou=users,dc=server,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: ahmed
+sn: jnah
+givenName: ahmed
+cn: jnah ahmed
+displayName: jnah ahmed
+uidNumber: 7000
+gidNumber: 7000
+gecos: Jnah Ahmed
+loginShell: /bin/bash
+homeDirectory: /home/ahmed
+
+ldapadd -x -D cn=admin,dc=server,dc=com -W -f  ahmed.ldif 
+
+***
+
+set password for ahmed user : 
+
+ldappasswd -D cn=admin,dc=server,dc=com -w 123456 -S "uid=ahmed,ou=users,dc=server,dc=com" -s ahmed
+
+**
+
+search by user and pass : 
+
+ldapsearch -D uid=ahmed,ou=users,dc=server,dc=com -w ahmed
+
