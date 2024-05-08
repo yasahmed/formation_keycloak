@@ -1,0 +1,7 @@
+upstream backend {
+    server 192.168.23.144:5051 fail_timeout=2s;
+    server 192.168.23.145:5051 fail_timeout=2s;
+}
+
+
+ proxy_pass              http://backend;
