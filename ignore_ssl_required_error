@@ -9,4 +9,5 @@ update realm set ssl_required='NONE';
 for postgresql SSL issue (due to azure)
 Added the line as below in pg_hba.conf:
 
+/etc/postgresql/14/main/pg_hba.conf 
 hostnossl    all          all            0.0.0.0/0  trust 
